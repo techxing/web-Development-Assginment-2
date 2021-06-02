@@ -1,0 +1,25 @@
+CREATE TABLE CabsOnline (
+  BookingID INT(100) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+
+  BookingDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+  CustomerName VARCHAR(50) NOT NULL,
+
+  PhoneNumber VARCHAR(15) NOT NULL,
+
+  UnitNumber VARCHAR(10) NOT NULL,
+
+  StreetNumber INT(10) NOT NULL,
+
+  StreetName VARCHAR(100) NOT NULL,
+
+  Suburb VARCHAR(50) NOT NULL,
+
+  DestinationSuburb VARCHAR(50) NOT NULL,
+
+  PickUpDate DATE NOT NULL,
+
+  PickUpTim TIME(6) NOT NULL,
+
+  BookingStatus VARCHAR(50) NOT NULL
+)

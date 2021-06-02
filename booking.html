@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <link rel="stylesheet" href="taxi.css" type="text/css" href=>
+  <meta charset="utf-8">
+  <title>Web Development Assginmet 2 - Task 1</title>
+
+  <script type="text/javascript" src="xhr.js"></script>
+  <script type="text/javascript" src="booking.js"> </script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1>Welcome to CabsOnline</h1>
+      <h2>Your journey starts here</h2>
+      <h3>
+        <div class="topnav">
+          <a href="adminlogin.html">Admin Login Page</a>
+        </div>
+      </h3>
+    </div>
+
+
+    <form class="form" id=taxiBookingForm>
+
+      <div class="form-control">
+        <label>Customer Name: </label>
+        <input type="text" id="cname" name="cname" placeholder="Enter your name here" autofocus>
+        <small>Error message</small>
+      </div>
+      <div class="form-control">
+        <label>Phone Number: </label>
+        <input type="text" id="phone" name="phone" placeholder="Enter your phone Number" pattern="[0-9]{12}" autofocus maxlength="12">
+
+        <small>Error message</small>
+      </div>
+
+      <div class="form-control">
+        <label>Unit Number: </label>
+        <input type="text" id="unumber" name="unumber" placeholder="Enter your unit number" pattern="[0-9]{5}" autofocus>
+        <small>Error message</small>
+      </div>
+
+      <div class="form-control">
+        <label>Street Number: </label>
+        <input type="text" id="snumber" name="snumber" placeholder="Enter your street number here" pattern="[0-9]{5}" autofocus>
+
+        <small>Error message</small>
+      </div>
+
+      <div class="form-control">
+        <label>Street Name: </label>
+        <input type="text" id="stname" name="stname" placeholder="Enter street name here" autofocus>
+
+        <small>Error message</small>
+      </div>
+
+      <div class="form-control">
+        <label>Suburb: </label>
+        <input type="text" id="sbname" name="sbname" placeholder="Enter pick up Suburb here" autofocus>
+
+        <small>Error message</small>
+      </div>
+
+      <div class="form-control">
+        <label>Destination Suburb: </label>
+        <input type="text" id="dsbname" name="dsbname" placeholder="Enter destination suburb here" autofocus>
+        <small>Error message</small>
+      </div>
+
+      <div class="form-control">
+        <label>Pick Up Date: </label>
+        <input type="date" id="datefield" name="date" min="1899-01-01" autofocus>
+        <small>Error message</small>
+      </div>
+
+      <div class="form-control">
+        <label>Pick Up Time: </label>
+        <input type="time" id="timefield" name="time" autofocus>
+        <small>Error message</small>
+      </div>
+
+      <div class="form-control">
+        <input name="submit" type="button" id="button" onClick="checkInput();" value="Book Ride Now">
+      </div>
+
+    </form>
+    <p name=reference>
+    <div id="targetDiv">
+
+    </div>
+  </p>
+
+  </div>
+
+  <script type="text/javascript">
+    //javascript for to make sure users cannot chose past date when input into date
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is [0]!
+    var yyyy = today.getFullYear();
+    var hh = today.getHours();
+    var min = today.getMinutes();
+
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+
+    if (hh < 10) {
+      hh = '0' + hh;
+    }
+
+    if (min < 10) {
+      min = '0' + min;
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById('datefield').setAttribute('min', today);
+    console.log(datefield);
+
+    var timeNow = hh + ' : ' + mm;
+    document.getElementById('timefield').setAttribute('min', timeNow);
+    console.log(timefield);
+  </script>
+
+</body>
+
+</html>

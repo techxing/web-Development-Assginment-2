@@ -1,0 +1,68 @@
+
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <link rel="stylesheet" href="admin.css" type="text/css">
+
+  <meta charset="utf-8">
+  <title>Web Development Assginmet 2 - Task 2</title>
+
+  <script type="text/javascript" src="xhr.js"></script>
+  <script type="text/javascript" src="admin.js"> </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>CabsOnline Admin System</h1>
+      <h2>Customer's journey enabled here</h2>
+      <h3><a href="booking.html">Back to Booking Page</a></h3>
+    </div>
+    <form>
+      <div class="form-control">
+        <input type="button" id="search" name="sbutton" onClick="getBookingRequest()" value="Search">
+
+
+        <input type="text" id="bookingID" name="bsearch" placeholder="Enter booking ID here" autofocus>
+        <input type=button id="assign" name="abutton" onClick="assignBooking()" value="Assign">
+      </div>
+    </form>
+
+    <table class="table" align="center" border="1">
+      <tr>
+        <th colspan="12" align="center">
+          <h2>CabsOnline Booking Table</h2>
+        </th>
+      </tr>
+      <tr>
+        <th>Booking ID</th>
+        <th>Customer Name</th>
+        <th>Phone Number</th>
+        <th>Unit Number</th>
+        <th>Street Number</th>
+        <th>Street Name</th>
+        <th>Suburb</th>
+        <th>Destination Suburb</th>
+        <th>PickUp Date</th>
+        <th>PickUp Time</th>
+        <th>Booking Status</th>
+        <th>Assign</th>
+      </tr>
+      <tbody id="targetDiv">
+
+      </tbody>
+    </table>
+    <div id="assignTarget">
+
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>
